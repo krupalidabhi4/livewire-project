@@ -4,5 +4,5 @@ Learning Livewire with Service Repository Architecture pattern
 📌 Features
 User Authentication (Login/Register)
 Create Projects
-Upload Images
+Upload Images 
 View Project List
