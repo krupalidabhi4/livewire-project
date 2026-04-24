@@ -10,7 +10,7 @@ Built with **Clean Architecture** using **Service Repository Pattern** for maint
 - 📁 Create Projects
 - 📁 Edit Projects
 - 🖼️ Upload Images
-- 📋 View Project List with Filtering
+- 📋 View Project List
 - ✏️ Full CRUD Operations
 - 🏗️ Clean Architecture with Service & Repository Pattern
 
@@ -128,7 +128,6 @@ This project follows the **Service Repository Architecture Pattern** for clean c
 // app/Repositories/ProjectRepository.php
 - Handles all database operations
 - CRUD: Create, Read, Update, Delete
-- Filters and searches
 - Data retrieval with relationships
 
 // Contracts (Interfaces)
