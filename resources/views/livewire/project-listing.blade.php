@@ -2,7 +2,7 @@
     <div class="container">
          <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0 fw-bold">Project Listing </h5>
+                <h5 class="mb-0 fw-bold">Project List </h5>
                 <a href="{{route('project.create')}}" class="btn btn-primary">Add Project</a>
             </div>
         </div>
