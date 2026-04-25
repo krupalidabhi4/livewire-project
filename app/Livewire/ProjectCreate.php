@@ -2,11 +2,13 @@
 
 namespace App\Livewire;
 
+use App\Jobs\ProcessProjectJob;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CountryRepository;
 use App\Repositories\SubcategoryRepository;
 use App\Services\ProjectService;
 use Exception;
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -89,9 +91,17 @@ class ProjectCreate extends Component
 
             $projectService->create($validated, $this->imageFile);
 
-            $this->dispatch('notify', message: 'Project created successfully!', type: 'success');
+            // Dispatch the job to the queue
+            ProcessProjectJob::dispatch();
+
+            $this->dispatch('notify', message: 'Project is being processed! You will be notified once it\'s created.', type: 'success');
             $this->redirect(route('project.list'), navigate : true);
+
         } catch (Exception $e){
+            Log::error('Error dispatching job', [
+                'error' => $e->getMessage(),
+                'timestamp' => now(),
+            ]);
 
             $this->dispatch('notify', message: $e->getMessage(), type: 'danger');
         }
