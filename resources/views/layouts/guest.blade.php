@@ -6,7 +6,8 @@
     <title>{{ $title ?? config('app.name') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="/build/assets/app-EfEBHmqD.css">
+    <script type="module" src="/build/assets/app-BbzB21r_.js"></script>
     @livewireStyles
 </head>
 <body class="bg-light">
