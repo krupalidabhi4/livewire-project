@@ -15,7 +15,7 @@ class ProjectRepository implements ProjectRepositoryInterface
     public function paginate(int $perPage = 10) {
         return ProjectModel::query()
                 ->with(['category', 'subCategory'])
-                ->latest()
+                ->orderBy('id','desc')
                 ->paginate($perPage);
     }
 
@@ -25,11 +25,6 @@ class ProjectRepository implements ProjectRepositoryInterface
 
     public function delete(int $id) {
         return ProjectModel::findOrFail($id)->delete();
-    }
-
-    public function edit(int $id)
-    {
-        return ProjectModel::findOrFail($id);
     }
 
     public function update(int $id,  array $data)

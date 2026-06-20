@@ -2,11 +2,12 @@
 namespace App\Repositories;
 
 use App\Models\SubCategory;
+use App\Repositories\Contracts\SubcategoryRepositoryInterface;
 
-class SubcategoryRepository
+class SubcategoryRepository implements SubcategoryRepositoryInterface
 {
-    public static function getAllSubCategory() {
+    public function getAll()
+    {
         return SubCategory::all();
     }
-
 }

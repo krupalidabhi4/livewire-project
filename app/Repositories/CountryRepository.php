@@ -2,11 +2,12 @@
 namespace App\Repositories;
 
 use App\Models\Country;
+use App\Repositories\Contracts\CountryRepositoryInterface;
 
-class CountryRepository
+class CountryRepository implements CountryRepositoryInterface
 {
-    public static function getCountries() {
+    public function getAll()
+    {
         return Country::all();
     }
-
 }

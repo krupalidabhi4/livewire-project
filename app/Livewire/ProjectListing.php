@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Repositories\ProjectRepository;
+use App\Repositories\Contracts\ProjectRepositoryInterface;
 use App\Services\ProjectService;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -18,7 +18,7 @@ class ProjectListing extends Component
     public string $deletingName   = '';
 
     #[Title('Project Listing')]
-    public function render(ProjectRepository $projectRepo)
+    public function render(ProjectRepositoryInterface $projectRepo)
     {
         $projects = $projectRepo->paginate(5);
 

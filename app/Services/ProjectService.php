@@ -2,13 +2,12 @@
 namespace App\Services;
 
 use App\Repositories\Contracts\ProjectRepositoryInterface;
-use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectService
 {
 
-    public function __construct(private readonly ProjectRepository $repo) {
+    public function __construct(private readonly ProjectRepositoryInterface $repo) {
 
     }
 

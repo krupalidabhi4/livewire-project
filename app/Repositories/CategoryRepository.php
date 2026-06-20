@@ -2,11 +2,12 @@
 namespace App\Repositories;
 
 use App\Models\Category;
+use App\Repositories\Contracts\CategoryRepositoryInterface;
 
-class CategoryRepository
+class CategoryRepository implements CategoryRepositoryInterface
 {
-    public static function getAllCategory() {
+    public function getAll()
+    {
         return Category::all();
     }
-
 }
